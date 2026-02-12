@@ -1,12 +1,14 @@
 import "./App.css";
-import ProductGrid from "./components/ProductGrid.jsx";
+import { Routes, Route } from "react-router";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Products</h1>
-      <ProductGrid />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/products" element={<ProductsPage />} />
+    </Routes>
   );
 }
 

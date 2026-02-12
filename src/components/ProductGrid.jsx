@@ -1,7 +1,9 @@
-import { use, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Product from "./Product";
 
 export default function ProductGrid() {
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
     async function fetchProducts() {
       const url =
@@ -10,6 +12,7 @@ export default function ProductGrid() {
       console.log(response);
       const data = await response.json();
       console.log(data);
+      setProducts(data);
     }
 
     fetchProducts();
